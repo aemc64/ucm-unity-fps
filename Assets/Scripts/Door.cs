@@ -7,11 +7,6 @@ public class Door : MonoBehaviour
 
     private float _timeRemaining;
 
-    private void Awake()
-    {
-        Open();
-    }
-
     private void Update()
     {
         if (_timeRemaining <= 0f)
@@ -24,7 +19,7 @@ public class Door : MonoBehaviour
         _timeRemaining -= Time.deltaTime;
     }
 
-    private void Open()
+    public void Open()
     {
         _timeRemaining = _timeToOpen;
     }

@@ -6,7 +6,7 @@ public class RespawnOnTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (other.CompareTag("Player"))
         {
             other.transform.position = _respawnPoint.position;
             other.transform.rotation = _respawnPoint.rotation; // Match rotation of the respawn point
