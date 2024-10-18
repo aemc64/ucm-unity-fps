@@ -47,6 +47,14 @@ public class Shoot : MonoBehaviour
 
     private void ShootInstant()
     {
-        Physics.Raycast(_shootOrigin.position, _shootOrigin.forward, _instantShootRange);
+        if (Physics.Raycast(_shootOrigin.position, _shootOrigin.forward, out RaycastHit hitInfo, _instantShootRange))
+        {
+            Instantiate(_instantShootParticles, hitInfo.point, Quaternion.identity);
+            Rigidbody attachedRigidbody = hitInfo.collider.attachedRigidbody;
+            if (attachedRigidbody != null && !attachedRigidbody.isKinematic)
+            {
+                attachedRigidbody.AddForce(hitInfo.normal.normalized * -1 * _instantShootForce);
+            }
+        }
     }
 }

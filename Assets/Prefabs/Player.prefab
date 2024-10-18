@@ -121,9 +121,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _projectilePrefab: {fileID: 0}
   _shootOrigin: {fileID: 3425607661056101242}
-  _projectileSpeed: 2
   _fireCooldown: 0.1
   _audioSource: {fileID: 0}
+  _projectileSpeed: 2
+  _instantShootParticles: {fileID: 0}
+  _instantShootForce: 0
+  _instantShootRange: 100
 --- !u!82 &3689741764961769651
 AudioSource:
   m_ObjectHideFlags: 0
@@ -294,6 +297,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8843225248186777274, guid: fdea1c974d01274418edd08979b5c739, type: 3}
   m_PrefabInstance: {fileID: 8425182568812614224}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2273707974534421521 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7737632431279918657, guid: fdea1c974d01274418edd08979b5c739, type: 3}
+  m_PrefabInstance: {fileID: 8425182568812614224}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8ba1d9e1d2d62f4d8c2a160c9823cd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &2876562511067942567 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5982988900066041079, guid: fdea1c974d01274418edd08979b5c739, type: 3}
@@ -360,10 +374,34 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 400002, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1413123246266606089}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 100002, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8030712976186375172}
   m_SourcePrefab: {fileID: 100100000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
 --- !u!4 &8655330594161515506 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400002, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
   m_PrefabInstance: {fileID: 8655330594161901936}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &8655330594161870802 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100002, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
+  m_PrefabInstance: {fileID: 8655330594161901936}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8030712976186375172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8655330594161870802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c94818656062c44eb109da87af1df2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _weapons:
+  - {fileID: 2273707974534421521}
+  - {fileID: 1096063765064509324}
+  _initialWeaponIndex: 0
